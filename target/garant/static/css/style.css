@@ -1,0 +1,1302 @@
+/* --------------------- 
+REGISTRATION SECTION
+--------------------- */
+.registration {
+	align-items: center;
+	text-align: center;
+	padding: 5px;
+	color: #4c977e;
+	padding-bottom: 20px;
+}
+
+.registration-elements {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.registration-title {
+	padding: 5px;
+	color: #fff;
+	font-size: 50px;	
+}
+
+.registration-subtitle {
+	text-align: center;
+	padding: 5px;
+	color: #b2b8b6;
+	font-size: 30px;	
+}
+
+.registration-input {
+	padding: 5px;
+	color: #fff;
+	width: 400px;
+	height: 30px;	
+}
+
+.registration-form {
+	align-self: center;
+	align-content: center;
+	align-items: center;
+	padding: 15px 20px 10px 20px;
+	background:  #fff;
+	max-width: 550px;
+	min-width: 350px;
+}
+.registration-input-login {
+	padding-top: 20px;
+	border-bottom: 2px solid #4c977e;
+	border-left:none;
+	border-right:none;
+	border-top:none;
+	background:  #fff;
+	margin-left: 50px;
+	color:#4c977e;
+	width: 450px;
+	height: 30px;
+	font-size: 20px;
+	-webkit-transition: .5s ease-out;
+	-moz-transition: .5s ease-out;
+	-o-transition: .5s ease-out;
+	transition: .5s ease-out;
+	margin-top: 20px;
+}
+
+.registration-input-password {
+	padding-top: 20px;
+	border-bottom: 2px solid #b2b8b6;
+	border-left:none;
+	border-right:none;
+	border-top:none;
+	background:  #fff;
+	margin-left: 50px;
+	margin-right: 50px;
+	font-size: 20px;
+	color: #b2b8b6;
+	width: 450px;
+	height: 30px;
+	-webkit-transition: .5s ease-out;
+	-moz-transition: .5s ease-out;
+	-o-transition: .5s ease-out;
+	transition: .5s ease-out;
+	margin-top: 20px;
+}
+
+.registration-errors
+{
+	margin-left: 50px;
+	margin-right: 50px;
+	font-size: 15px;
+	color: #cb5535;
+}
+
+.btn-registration-section {
+	padding-top: 50px;
+	margin-left: 50px;
+	padding-bottom: 20px;
+}
+
+.btn-registration {
+	margin-top: 20px;
+	background: #bee9cf;
+	color:  #fff;
+	border: #bee9cf;
+	font-size: 20px;
+	width: 450px;
+	height: 30px;
+}
+
+.btn-registration:hover {
+	background: #b2d7ce;
+	border: #b2d7ce;
+	color: #fff;
+	width: 450px;
+	height: 30px;
+}
+/* --------------------- 
+LOGIN SECTION
+--------------------- */
+.login {
+	align-items: center;
+	text-align: center;
+	padding: 5px;
+	color: #4c977e;	
+}
+
+.login-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.login-title {
+
+	padding: 5px;
+	color: #fff;
+	font-size: 50px;
+}
+
+.login-subtitle {
+	text-align: center;
+	padding: 5px;
+	color: #b2b8b6;
+	font-size: 30px;	
+}
+
+.login-alert
+{
+	font-size: 15px;
+	color: #cb5535;
+}
+
+.login-title-bottom {
+	text-align: right;
+	color: #4c977e;
+	font-size: 15px;
+	padding-top: 30px;
+	padding-right: 50px;
+	float: right;	
+	text-decoration: none;
+}
+
+.login-input {
+	padding: 5px;
+	color: #fff;
+	width: 400px;
+	height: 30px;	
+}
+
+.login-form {
+    align-self: center;
+	align-content: center;
+	align-items: center;
+	padding: 15px 20px 10px 20px;
+	background:  #fff;
+	max-width: 550px;
+	min-width: 350px;	
+}
+
+.login-input-login {
+	padding-top: 20px;
+	border-bottom: 2px solid #4c977e;
+	border-left:none;
+	border-right:none;
+	border-top:none;
+	background:  #fff;
+	margin-left: 50px;
+	color:#4c977e;
+	width: 450px;
+	height: 30px;
+	font-size: 20px;
+	-webkit-transition: .5s ease-out;
+	-moz-transition: .5s ease-out;
+	-o-transition: .5s ease-out;
+	transition: .5s ease-out;
+	margin-top: 20px;
+}
+
+.login-input-password {
+	padding-top: 20px;
+	border-bottom: 2px solid #b2b8b6;
+	border-left:none;
+	border-right:none;
+	border-top:none;
+	background:  #fff;
+	margin-left: 50px;
+	margin-right: 50px;
+	font-size: 20px;
+	color: #b2b8b6;
+	width: 450px;
+	height: 30px;
+	-webkit-transition: .5s ease-out;
+	-moz-transition: .5s ease-out;
+	-o-transition: .5s ease-out;
+	transition: .5s ease-out;
+	margin-top: 20px;
+}
+
+.btn-login-section {
+	padding-top: 50px;
+	margin-left: 50px;
+}
+
+.btn-login {
+	background: #bee9cf;
+	border: #bee9cf;
+	color:  #b2b8b6;
+	font-size: 20px;
+	width: 450px;
+	height: 30px;
+}
+
+.btn-login:hover {
+	background: #b2d7ce;
+	border: #b2d7ce;
+	color: #b2b8b6;
+	width: 450px;
+	height: 30px;
+}
+
+.alert-danger{
+	padding-left: 50px;
+}
+
+.alert-success{
+	padding-left: 50px;
+}
+
+/* --------------------- 
+WELCOME SECTION
+--------------------- */
+#main-elements{
+	background-image: url(Garant1.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+	margin: 0;
+}
+
+.b-popup{
+	background-color: rgba(196, 192, 192, 0.705);
+    overflow: hidden;
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    left: 100px;
+    right: 100px;
+    /* max-height: 600px; */
+    min-height: 500px;
+    max-width: 800px;
+}
+
+.b-popup-content{
+	display: none;
+	color: black;
+	border-radius:5px;
+	font-size: 20px;
+	overflow:auto;
+	position: fixed;
+	height: 80%;
+    width: 80%;
+    max-width: 800px;
+}
+
+.btn-main {
+	color:  #fff;
+	font-size: 15px;
+	height: 30px;
+	padding: 10px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.btn-main-title {
+	text-decoration: none;
+	color: #fff;
+}
+
+.btn-main-section {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+}
+
+.main-title {
+	color: #fff;
+	font-size: 50px;
+	padding-left: 100px;
+
+}
+
+.main-content {
+	display: flex;
+	flex-direction: column;
+
+}
+
+.main-subtitle {
+	color: #fff;
+	font-size: 40px;
+	padding-left: 100px;
+
+}
+
+.btn-close-pop-up {
+	font-size: 20px;
+	color: black;
+	text-align: center;
+}
+
+@media(min-width: 780px) {
+	.li-main {
+		width: 93%;
+	}
+}
+
+@media(max-width: 780px) {
+	.li-main {
+		width: 80%;
+	}
+
+	.main-subtitle {
+		font-size: 30px;
+	}
+
+}
+
+@media(max-width: 570px){
+.li-main{
+	width: 70%;
+}
+
+}
+
+@media(max-width: 500px) {
+	.li-main {
+		width: 55%;
+	}
+
+	.main-subtitle {
+		font-size: 25px;
+	}
+
+	.main-title {
+		font-size: 40px;
+	}
+
+	.btn-close-pop-up {
+		padding-right: 70px;
+	}
+}
+/* --------------------- 
+ADMIN SECTION
+--------------------- */
+
+.admin-panel {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.admin-table {
+	border: solid 1px white;
+}
+
+.panel-heading {
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+}
+
+.admin-table-tr {
+	border: solid 1px white;
+}
+
+.admin-table-th {
+	border: solid 1px black;
+}
+
+/* --------------------- 
+MAIN SECTION
+--------------------- */
+
+.header-section {
+	background: #1a8e6f;
+	padding-bottom: 30px;
+}
+
+.header-section-titles {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.header-section-subtitles {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+
+.main-section {
+	padding-top: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	background: #dee4e2;
+
+}
+
+.all-deals-section {
+	padding-bottom: 10px;
+	background: white;
+	margin-bottom: 30px;
+	margin-left: 10px;
+}
+
+.deals-section-subsection
+{
+	display: flex;
+	flex-direction: column;
+}
+
+.deals-section-subsection-element
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.all-deals {
+	display: flex;
+	flex-direction: column;
+	background: #dee4e2;
+    width: 300px;
+	padding-right: 10px;
+	min-height: 300px;
+	padding-bottom: 20px;
+	flex-wrap: wrap;
+}
+
+.deals-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	height: 150px;
+	overflow: scroll;
+}
+
+.deals-section-elements {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	background: #137259f5;
+	color: white;
+	margin: 10px;
+}
+
+.b-popup-content-deals {
+	background: #dee4e2;
+	overflow: scroll;
+}
+
+.deal-element {
+	display: block;
+	flex-grow: 1;
+}
+
+.deal-number
+{
+	max-width: 50px;
+}
+
+.deal-name {
+	max-width: 100px;
+}
+
+.deal-user-status
+{
+	max-width: 200px;
+}
+
+.deal-sum
+{
+	max-width: 50px;
+}
+
+.deal-status
+{
+	max-width: 100px;
+}
+
+.deals-name {
+	font-size: 18px;
+	text-align: center;
+}
+
+.deals-cash {
+	font-size: 18px;
+	text-align: center;
+	color: black;
+	display: block;
+	flex-grow: 1;
+}
+
+.deals-username {
+	font-size: 18px;
+	text-align: center;
+	color: black;
+	display: block;
+	flex-grow: 2;
+	max-width: 150px;
+}
+
+.add-deal-btn {
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	border: solid 1px #137259f5;
+	background: #137259f5;
+	text-align: center;
+	margin-left: 10px;
+	height: 50px;
+}
+
+.add-deal-btn-title {
+	padding-top: 15px;
+}
+
+.deal-btn-title {
+	color: white;
+	font-size: 18px;
+}
+
+.subtitle-money {
+	background: #137259f5;
+	width: 300px;
+	text-align: center;
+	height: 150px;
+}
+
+.subtitle-money-name {
+	padding-top: 90px;
+}
+
+.subtitle-section {
+	flex-grow: 5;
+	max-width: 800px;
+	min-width: 400px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+
+}
+
+.subtitle-name {
+	padding-top: 100px;
+	padding-left: 20px;
+}
+
+.subtitle-name-btn {
+	font-size: 22px;
+	padding-left: 5px;
+}
+
+.subsection-btns {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background: #1a8e6f;
+	min-width: 400px;
+}
+
+.arbitration-list {
+	list-style-type: none;
+}
+
+.b-popup-content-user {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	color: black;
+	border-radius: 5px;
+	font-size: 20px;
+	overflow: auto;
+	position: absolute;
+	height: 80%;
+	width: 100%;
+	text-align: center;
+	padding-top: 40px;
+	z-index: 1;
+}
+
+.b-popup-user {
+	background-color: white;
+	overflow: hidden;
+	position: absolute;
+	top: 5px;
+	bottom: 50px;
+	right: 5px;
+	max-height: 500px;
+	min-height: 400px;
+	max-width: 300px;
+	min-width: 250px;
+	z-index: 1;
+}
+
+.btn-main-user-rules,
+.btn-main-user-comission,
+.btn-main-user-exit,
+.btn-main-user-user-name {
+	max-width: 300px;
+	color: grey;
+	cursor: pointer;
+}
+
+.btn-main-user-exit {
+	border: 1px solid white;
+	font-size: 20px;
+}
+
+.user-green {
+	color: #137259f5;
+}
+
+.b-popup-rules {
+	background-color: #137259f5;
+	overflow: hidden;
+	position: absolute;
+	top: 50px;
+	bottom: 50px;
+	left: 100px;
+	right: 100px;
+	max-height: 600px;
+	min-height: 500px;
+	z-index: 2;
+}
+
+.b-popup-content-rules {
+	display: none;
+	color: white;
+	border-radius: 5px;
+	font-size: 20px;
+	overflow: auto;
+	position: fixed;
+	height: 80%;
+	width: 80%;
+	z-index: 2;
+}
+
+.b-popup-comission {
+	background-color: #137259f5;
+	overflow: hidden;
+	position: absolute;
+	top: 50px;
+	bottom: 50px;
+	left: 180px;
+	right: 180px;
+	max-height: 300px;
+	min-height: 200px;
+	max-width: 500px;
+	z-index: 2;
+}
+
+.b-popup-content-comission {
+	display: none;
+	color: white;
+	border-radius: 5px;
+	font-size: 20px;
+	overflow: auto;
+	position: absolute;
+	max-width: 500px;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.b-popup-content-comission-description {
+	text-align: center;
+	font-size: 24px;
+}
+
+.b-popup-content-comission-description-min {
+	font-size: 8px;
+	padding-left: 10px;
+}
+
+.b-popup-content-rules {
+	display: flex;
+	flex-direction: column;
+}
+
+.b-popup-content-rules-description-title {
+	font-weight: bold;
+}
+
+.main-subsection {
+
+	min-width: 400px;
+	background: white;
+	flex-grow: 5;
+	color: black;
+	padding-bottom: 20px;
+}
+
+.subtitle-name {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	color: #fff;
+	font-size: 14px;
+}
+
+.subtitle-money {
+	color: #fff;
+	font-size: 24px;
+}
+
+.title-main {
+	color: #fff;
+	padding-left: 40px;
+	font-size: 30px;
+}
+
+.title-user {
+	color: #fff;
+	padding-right: 40px;
+	display: flex;
+	flex-direction: row;
+}
+
+.b-popup-chats {
+	
+}
+
+.b-popup-content-chats {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	min-width: 200px;
+}
+
+.chats-contacts {
+	display: flex;
+	flex-direction: column;
+	border-right: 2px solid #4c977e;
+	padding: 5px;
+}
+
+.chats-contact {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-bottom: 5px;
+}
+
+.chats-conversation {
+	display: flex;
+	flex-direction: column;
+	padding: 5px;
+}
+
+.chats-conversation-section-input {
+	display: flex;
+	flex-direction: row;
+}
+
+.chats-conversation-submit-btn {
+	height: 30px;
+	padding-top: 30px;
+	border: 2px solid white;
+
+}
+
+.btn-chat-submit {
+	color: #4c977e;
+	font-size: 20px;
+}
+
+.chats-conversation-details {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.chats-conversation-section {
+	padding: 5px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.chats-contact-add-btn {
+	padding-bottom: 5px;
+}
+
+.chats-conversation-input-field,
+.chats-input {
+	padding-top: 10px;
+	border-bottom: 2px solid #4c977e;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	background: #fff;
+	color: #4c977e;
+	width: 450px;
+	height: 30px;
+	font-size: 20px;
+}
+
+.b-popup-deals {
+
+}
+
+.b-popup-arbitration {
+	
+}
+
+.b-popup-content-arbitration {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.arbitration-section-elements {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	background: #137259f5;
+	color: white;
+	margin: 10px;
+}
+
+.arbitration-element {
+	padding-right: 20px;
+}
+
+.b-popup-customer-service {
+	
+}
+
+.b-popup-content-customer-service {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	min-width: 200px;
+}
+
+.customer-service-contacts {
+	display: flex;
+	flex-direction: column;
+	border-right: 2px solid #4c977e;
+	padding: 5px;
+}
+
+.customer-service-contact {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-bottom: 5px;
+}
+
+.customer-service-conversation {
+	display: flex;
+	flex-direction: column;
+	padding: 5px;
+}
+
+.customer-service-conversation-section-input {
+	display: flex;
+	flex-direction: row;
+}
+
+.customer-service-conversation-submit-btn {
+	height: 30px;
+	padding-top: 30px;
+	border: 2px solid white;
+
+}
+
+.btn-customer-service-submit {
+	color: #4c977e;
+	font-size: 20px;
+}
+
+.customer-service-conversation-details {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.customer-service-conversation-section {
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.customer-service-contact-add-btn {
+	padding-bottom: 5px;
+}
+
+.customer-service-conversation-input-field,
+.customer-service-input {
+	padding-top: 10px;
+	border-bottom: 2px solid #4c977e;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	background: #fff;
+	color: #4c977e;
+	width: 450px;
+	height: 30px;
+	font-size: 20px;
+}
+
+.b-popup-create-deal {
+	
+}
+
+.create-deal-block {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.create-deal-input {
+	padding-left: 10px;
+	padding-top: 10px;
+	border-bottom: 2px solid #4c977e;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	background: #fff;
+	color: #4c977e;
+	height: 20px;
+	font-size: 20px;
+	min-width: 200px;
+	flex: 2;
+}
+
+.create-dealt-field
+{
+	display: flex;	
+}
+
+.additionally-field {
+	padding-top: 40px;
+}
+
+.create-deal-headers {
+	font-size: 10px;
+	color: #b2b8b6;
+}
+
+.create-deal-ul {
+	display: flex;
+	flex-direction: row;
+	list-style-type: none;
+	justify-content: flex-start;
+	padding-inline-start: 0px;
+}
+
+.create-deal-li {
+	border: 2px solid #4c977e;
+	background: #4c977e;
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+	width: 150px;
+	cursor: pointer;
+}
+
+.create-deal-term-input-field-time,
+.create-deal-term-input-field-date,
+.create-deal-sum-input-field,
+.btn-create-deal-submit {
+	border: 2px solid #4c977e;
+	background: #4c977e;
+	color: #fff;
+	font-size: 20px;
+	width: 300px;
+}
+
+.btn-create-deal-submit {
+	margin-top: 20px;
+	width: 306px;
+	padding-top: 10px;
+	cursor: pointer;
+}
+
+#button-buyer
+{
+	background: #3a7562;
+}
+
+.create-deal-fields-section {
+	flex-grow: 2;
+	margin: 5px;
+	display: flex;
+	flex-direction: column;
+	padding-right: 20px;
+    padding-left: 20px;
+}
+
+.create-deal-btns-section {
+	flex-grow: 1;
+}
+
+.create-deal-term-input-field-subsection {
+	display: flex;
+	flex-direction: row;
+}
+
+.b-popup-accept-deal-customer {
+	
+}
+
+.accept-deal-customer-block {
+	display: flex;
+	flex-direction: row;
+}
+
+.accept-deal-customer-section {
+	display: flex;
+	flex-direction: column;
+	background: #dee4e2;
+	margin: 5px;
+}
+
+.accept-deal-customer-subsection {
+	display: flex;
+	flex-direction: row;
+}
+
+.accept-deal-customer-btns-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 5px;
+}
+
+.customer-submit-btn-subsection {
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 10px;
+}
+
+.accept-deal-customer {
+	padding-bottom: 5px;
+}
+
+.accept-deal-customer-current-time-field {
+	padding-top: 30px;
+	text-align: right;
+}
+
+.customer-submit-btn {
+	border: 2px solid #4c977e;
+	background: #4c977e;
+	color: #fff;
+	font-size: 20px;
+	width: 100%;
+}
+
+.b-popup-accept-deal-executor {
+	
+}
+
+.accept-deal-executor-block {
+	display: flex;
+	flex-direction: row;
+}
+
+.accept-deal-executor-section {
+	display: flex;
+	flex-direction: column;
+	background: #dee4e2;
+	margin: 5px;
+}
+
+.accept-deal-executor-subsection {
+	display: flex;
+	flex-direction: row;
+}
+
+.accept-deal-executor-btns-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 5px;
+}
+
+.executor-submit-btn-subsection {
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 10px;
+}
+
+.accept-deal-executor {
+	padding-bottom: 5px;
+}
+
+.accept-deal-executor-current-time-field {
+	padding-top: 30px;
+	text-align: right;
+}
+
+.executor-submit-btn {
+	border: 2px solid #4c977e;
+	background: #4c977e;
+	color: #fff;
+	font-size: 20px;
+	width: 100%;
+}
+
+.b-popup-pay-in {
+	
+
+}
+
+.b-popup-pay-out {
+
+}
+
+.pay-in-block {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.pay-in-section {
+	display: flex;
+	flex-direction: column;
+}
+
+.accept-deal-executor-btns-section {
+	display: flex;
+	flex-direction: column;
+}
+
+.pay-in-card-title {
+	color: #b2b8b6;
+	font-size: 10px;
+}
+
+.pay-in-comission-title {
+	color: #b2b8b6;
+	font-size: 8px;
+}
+
+.pay-in-submit-btn {
+	border: 2px solid #4c977e;
+	background: #4c977e;
+	color: #fff;
+	font-size: 20px;
+	width: 100%;
+	width: 60%;
+}
+
+.pay-in-sum-currency {
+	color: #4c977e;
+}
+
+.pay-in-section {
+	margin: 5px;
+	flex-grow: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	max-width: 400px;
+}
+
+.pay-in-btns-section {
+	margin: 5px;
+	flex-grow: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.pay-in-input {
+	max-width: 200px;
+}
+
+.btn-chat {
+	padding: 3px;
+}
+
+.btn-deals {
+	padding: 3px;
+}
+
+.btn-arbitration {
+	padding: 3px;
+}
+
+.btn-service {
+	padding: 3px;
+}
+
+.fa-minus-square {
+	color: #fff;
+}
+
+.fa-plus-square {
+	color: #fff;
+}
+
+.fa-users-cog {
+	color: #fff;
+}
+
+.active {
+	display: block;
+}
+
+@media(min-width: 780px) {
+	.b-popup-content-rules-description {
+		width: 93%;
+	}
+}
+
+@media(max-width: 780px) {
+	.b-popup-content-rules-description {
+		width: 80%;
+	}
+
+
+}
+
+@media(max-width: 570px) {
+	.b-popup-content-rules-description {
+		width: 70%;
+	}
+
+}
+
+@media(max-width: 500px) {
+	.b-popup-content-rules-description {
+		width: 55%;
+		font-size: 25px;
+	}
+
+	.mb-popup-content-rules-description-title {
+		font-size: 40px;
+	}
+
+}
+
+/* --------------------- 
+BASIC SETTINGS
+--------------------- */
+body {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	background: #1a8e6f;
+}
+
+a
+{
+	text-decoration: none;
+	color: #fff;
+}
+
+.btn
+{
+	cursor: pointer;
+}
+
+/* --------------------- 
+FOOTER SECTION
+--------------------- */
+footer {
+	padding: 75px 0 30px 0;
+}
+
+
+

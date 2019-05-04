@@ -1,0 +1,15 @@
+package com.garant.dev.service;
+
+import java.util.List;
+
+import com.garant.dev.model.UserProfile;
+
+public interface UserProfileService {
+ 
+    UserProfile findById(int id);
+ 
+    UserProfile findByType(String type);
+     
+    List<UserProfile> findAll();
+     
+}
