@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.garant.dev.model.ChatMessage;
+import com.garant.dev.model.DealMessage;
 
 import static java.lang.Math.*;
 
@@ -27,8 +27,8 @@ public class MessageDaoImpl implements MessageDao {
     }
 
     @Transactional(readOnly=true)
-    public ChatMessage getMessage(Long messageId) {
-        ChatMessage message = (ChatMessage) sessionFactory.getCurrentSession().get(ChatMessage.class, messageId);
+    public DealMessage getMessage(Long messageId) {
+        DealMessage message = (DealMessage) sessionFactory.getCurrentSession().get(DealMessage.class, messageId);
         if (log.isDebugEnabled()) {
             log.debug ("getMessage: " + message);
         }
@@ -36,21 +36,29 @@ public class MessageDaoImpl implements MessageDao {
     }
 
     @Transactional(readOnly = false)
-    public void addMessage(ChatMessage message) {
+    public void addMessage(DealMessage message) {
         sessionFactory.getCurrentSession().save(message);
     }
 
     @Transactional(readOnly=true)
-    public List<ChatMessage> getRecentMessages(int limit) {
+    public List<DealMessage> getRecentMessages(int limit) {
         Query query = sessionFactory.getCurrentSession().getNamedQuery("fetchRecentMessages");
         if (limit > 0) {
             query.setMaxResults(limit);
-            List<ChatMessage> list = query.list();
+            List<DealMessage> list = query.list();
             return list.subList(0,
                     min(limit, list.size()));
         } else {
-            List<ChatMessage> list = query.list();
+            List<DealMessage> list = query.list();
             return list;
         }
+    }
+    
+    @Transactional(readOnly=true)
+    public List<DealMessage> getMessages(int dealId){
+    Query query = sessionFactory.getCurrentSession().createSQLQuery("select * from MESSAGES where deal_id="+dealId+" order by timestamp desc").addEntity(DealMessage.class);;
+    	List<DealMessage> list = query.list();
+    return list;
+    	
     }
 }

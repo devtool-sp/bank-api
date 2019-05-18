@@ -49,9 +49,26 @@ create table MESSAGES(
    timestamp DATE NOT NULL,
    author_id BIGINT NOT NULL,
    deal_id BIGINT NOT NULL,
+   arbitr_id BIGINT,
+   customer_service_id BIGINT,
    PRIMARY KEY (id),
    FOREIGN KEY (author_id) REFERENCES APP_USER (id),
-   FOREIGN KEY (deal_id) REFERENCES APP_USER (id)
+   FOREIGN KEY (customer_service_id) REFERENCES APP_USER (id),
+   FOREIGN KEY (arbitr_id) REFERENCES APP_USER (id),
+   FOREIGN KEY (deal_id) REFERENCES USER_DEALS (id)
+);
+
+/* SIMPLE_MESSAGES table contains all possible messages */ 
+create table SIMPLE_MESSAGES(
+   id BIGINT NOT NULL AUTO_INCREMENT,
+   message TEXT(5000) NOT NULL,
+   timestamp DATE NOT NULL,
+   sender_id BIGINT NOT NULL,
+   reciever_id BIGINT NOT NULL,
+   chat_id BIGINT NOT NULL,
+   PRIMARY KEY (id),
+   FOREIGN KEY (sender_id) REFERENCES APP_USER (id),
+   FOREIGN KEY (reciever_id) REFERENCES APP_USER (id)
 );
 
 /* Populate USER_PROFILE Table */

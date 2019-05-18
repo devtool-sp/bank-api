@@ -1,9 +1,9 @@
 /**
  * 
  */
-$(document).ready(function(){
+jQuery(document).ready(function($){
     // auto-refresh task
-    setInterval('updateChatHistory()', 30000); // that's 30 seconds
+    setInterval('updateChatHistory()', 5000); // that's 30 seconds
 
     onupload();
     
@@ -12,6 +12,14 @@ $(document).ready(function(){
 
     // MessagesPerPage radio button change handler
     $('input:radio[name="messagesPerPage"]').change(setMessagesPerPage);
+});
+
+$(function () {
+    var token = $("meta[name='_csrf']").attr("content");
+    var header = $("meta[name='_csrf_header']").attr("content");
+    $(document).ajaxSend(function(e, xhr, options) {
+        xhr.setRequestHeader(header, token);
+    });
 });
 
 function onupload(){
@@ -26,7 +34,7 @@ function onupload(){
 function onClickPostMessage() {
 	var text = $('#data').val();
     if ($.trim(text)) {
-        postChatMessage();
+        postChatMessage(text);
     } else {
         $('#data').val('');
         $('span#flash').attr("class", "error");
@@ -40,11 +48,11 @@ function updateChatHistory(){
     //get new content through ajax
     $.ajax({
         type : 'GET',
-        url : '/loadChatHistoryAJAX.json',
+        url : '/garant/loadChatHistoryAJAX.json',
         dataType : 'json',
         success : function(data){
             $("#chat").fadeOut(1000);
-            $('#chat').html(data.data);
+            $('#chat').html(data);
             $('#chat').fadeIn(1000);
         },
         error : function(e) {
@@ -52,14 +60,14 @@ function updateChatHistory(){
     });
 }
 
-function postChatMessage() {
+function postChatMessage(text) {
+	var data = {"message" : $("#data").val()}
     $.ajax({
         type : 'POST',
-        url : '/postMessageAJAX.json',
-        dataType: 'json',
-        data : {
-        	 "data":  $("#data").val()
-        },
+        contentType : "application/json; charset=utf-8",
+        url : '/garant/postMessageAJAX.json',            
+        data : JSON.stringify(data),
+        dataType: 'json', 
         success : function(response){
             if (response.status == 'SUCCESS') {
                 $('#data').val('');
@@ -82,7 +90,7 @@ function postChatMessage() {
 function setMessagesPerPage(){
     $.ajax({
         type : 'POST',
-        url : '/setMessagesPerPagePropAJAX.json',
+        url : '/garant/setMessagesPerPagePropAJAX.json',
         dataType : 'json',
         data : {
             limit : $(this).val()

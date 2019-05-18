@@ -31,16 +31,13 @@ import com.garant.dev.validator.DealValidator;
 import com.garant.dev.validator.UserValidator;
 
 /**
- * The controller class for main page.
+ * The controller class for deals page.
  */
 @Controller
 public class DealsController {
 	
 	@Autowired
     private DealValidator dealValidator;
-	
-	@Autowired
-    private UserValidator userValidator;
 	
 	@Autowired
     private DealService dealService;
@@ -55,7 +52,7 @@ public class DealsController {
      * This method returns deals page.
      */
 	@RequestMapping(value = { "/createdeal" }, method = RequestMethod.GET)
-	public String prepare(ModelMap model, HttpSession session, HttpServletRequest req) {
+	public String prepare(ModelMap model) {
 		Deal deal = new Deal();
 		model.addAttribute("deal", deal);
 		User user = getCurrentUser();

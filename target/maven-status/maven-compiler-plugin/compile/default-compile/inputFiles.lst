@@ -8,12 +8,14 @@
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/dao/DealDaoImpl.java
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/dao/MessageDaoImpl.java
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/dao/UserDaoImpl.java
-/Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/model/ChatMessage.java
-/Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/model/UserProfile.java
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/dao/UserProfileDaoImpl.java
+/Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/model/UserProfile.java
+/Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/dao/SimpleMessageDao.java
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/service/CustomUserDetailsService.java
+/Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/service/SimpleMessageServiceImpl.java
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/controller/DealsController.java
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/security/SecurityConfiguration.java
+/Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/model/DealMessage.java
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/model/Deal.java
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/dao/UserDao.java
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/dao/UserProfileDao.java
@@ -33,6 +35,7 @@
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/model/User.java
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/dao/MessageDao.java
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/service/MessageServiceImpl.java
+/Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/dao/SimpleMessageDaoImpl.java
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/model/UserProfileType.java
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/service/UserProfileServiceImpl.java
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/controller/RegistrationController.java
@@ -41,3 +44,5 @@
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/service/DealService.java
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/util/ChatRoom.java
 /Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/dao/DealDao.java
+/Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/model/SimpleMessage.java
+/Users/anna/eclipse-workspace/garant.dev.v1/src/main/java/com/garant/dev/service/SimpleMessageService.java

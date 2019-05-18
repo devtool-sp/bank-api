@@ -72,7 +72,7 @@ public class Deal implements Serializable{
 	 private User seller;
 	 
 	 @OneToMany(mappedBy = "chatDeal")
-	 private List<ChatMessage> messageDeals;
+	 private List<DealMessage> messageDeals;
 
 	 @Transient
 	 private List<String> status;
@@ -157,11 +157,11 @@ public class Deal implements Serializable{
 		this.seller = seller;
 	}
 
-	public List<ChatMessage> getMessageDeals() {
+	public List<DealMessage> getMessageDeals() {
 		return messageDeals;
 	}
 
-	public void setMessageDeals(List<ChatMessage> messageDeals) {
+	public void setMessageDeals(List<DealMessage> messageDeals) {
 		this.messageDeals = messageDeals;
 	}
 

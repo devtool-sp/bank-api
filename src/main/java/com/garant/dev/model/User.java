@@ -1,12 +1,8 @@
 package com.garant.dev.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,13 +12,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+
 import org.hibernate.validator.constraints.NotEmpty;
-import com.garant.dev.model.UserProfile;
  
 @Entity
 @Table(name="APP_USER")
@@ -56,7 +50,13 @@ public class User implements Serializable{
     private List<Deal> sellerdeals;
     
     @OneToMany(mappedBy = "author")
-    private List<ChatMessage> chatMessages;
+    private List<DealMessage> chatMessages;
+    
+    @OneToMany(mappedBy = "sender")
+    private List<ChatMessage> senderMessages;
+    
+    @OneToMany(mappedBy = "reciever")
+    private List<ChatMessage> recieverMessages;
  
     public Integer getId() {
         return id;
@@ -114,12 +114,28 @@ public class User implements Serializable{
 		this.sellerdeals = sellerdeals;
 	}
 
-	public List<ChatMessage> getChatMessages() {
+	public List<DealMessage> getChatMessages() {
 		return chatMessages;
 	}
 
-	public void setChatMessages(List<ChatMessage> chatMessages) {
+	public void setChatMessages(List<DealMessage> chatMessages) {
 		this.chatMessages = chatMessages;
+	}
+
+	public List<ChatMessage> getSenderMessages() {
+		return senderMessages;
+	}
+
+	public void setSenderMessages(List<ChatMessage> senderMessages) {
+		this.senderMessages = senderMessages;
+	}
+
+	public List<ChatMessage> getRecieverMessages() {
+		return recieverMessages;
+	}
+
+	public void setRecieverMessages(List<ChatMessage> recieverMessages) {
+		this.recieverMessages = recieverMessages;
 	}
 
 	@Override
@@ -131,7 +147,9 @@ public class User implements Serializable{
 		result = prime * result + ((confirmPassword == null) ? 0 : confirmPassword.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((recieverMessages == null) ? 0 : recieverMessages.hashCode());
 		result = prime * result + ((sellerdeals == null) ? 0 : sellerdeals.hashCode());
+		result = prime * result + ((senderMessages == null) ? 0 : senderMessages.hashCode());
 		result = prime * result + ((ssoId == null) ? 0 : ssoId.hashCode());
 		result = prime * result + ((userProfiles == null) ? 0 : userProfiles.hashCode());
 		return result;
@@ -171,10 +189,20 @@ public class User implements Serializable{
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
+		if (recieverMessages == null) {
+			if (other.recieverMessages != null)
+				return false;
+		} else if (!recieverMessages.equals(other.recieverMessages))
+			return false;
 		if (sellerdeals == null) {
 			if (other.sellerdeals != null)
 				return false;
 		} else if (!sellerdeals.equals(other.sellerdeals))
+			return false;
+		if (senderMessages == null) {
+			if (other.senderMessages != null)
+				return false;
+		} else if (!senderMessages.equals(other.senderMessages))
 			return false;
 		if (ssoId == null) {
 			if (other.ssoId != null)

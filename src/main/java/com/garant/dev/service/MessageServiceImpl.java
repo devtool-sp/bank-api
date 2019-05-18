@@ -1,7 +1,7 @@
 package com.garant.dev.service;
 
 import com.garant.dev.dao.MessageDao;
-import com.garant.dev.model.ChatMessage;
+import com.garant.dev.model.DealMessage;
 import org.joda.time.DateTime;
 import org.joda.time.DurationFieldType;
 import org.joda.time.Period;
@@ -28,25 +28,31 @@ public class MessageServiceImpl implements MessageService{
     @Autowired
     private MessageDao messageDao;
 
-    public ChatMessage getMessage(Long messageId) {
+    public DealMessage getMessage(Long messageId) {
         return messageDao.getMessage(messageId);
     }
 
-    public List<ChatMessage> getRecentMessages(int limit) {
-        List<ChatMessage> list = messageDao.getRecentMessages(limit);
+    public List<DealMessage> getRecentMessages(int limit) {
+        List<DealMessage> list = messageDao.getRecentMessages(limit);
+        Collections.reverse(list);
+        return list;
+    }
+    
+    public List<DealMessage> getMessages(int dealId){
+        List<DealMessage> list = messageDao.getMessages(dealId);
         Collections.reverse(list);
         return list;
     }
 
-    public void addMessage(ChatMessage message) {
+    public void addMessage(DealMessage message) {
         messageDao.addMessage(message);
     }
 
     public StringBuilder fetchChatHistory(int limit) {
         StringBuilder chatHistory = new StringBuilder();
-        List<ChatMessage> messages = getRecentMessages(limit);
+        List<DealMessage> messages = getRecentMessages(limit);
 
-        for (ChatMessage m : messages ) {
+        for (DealMessage m : messages ) {
             String added = getTimeDiff(m.getTimestamp());
             chatHistory.append(
                     String.format("%s <b>%s</b>: %s<br />",
@@ -60,8 +66,6 @@ public class MessageServiceImpl implements MessageService{
 
     private String getTimeDiff(Date startTime) {
         DateTime now = new DateTime();
-        //log.debug("now = " + now);
-        //log.debug("startDate = " + new DateTime(startTime) );
         PeriodType type = PeriodType.forFields(new DurationFieldType[] {
                 DurationFieldType.minutes(),
                 DurationFieldType.hours(),

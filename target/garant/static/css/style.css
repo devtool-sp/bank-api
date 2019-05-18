@@ -818,6 +818,11 @@ MAIN SECTION
 	padding-bottom: 5px;
 }
 
+.chats-contact-name, .chats-contact-status, .chats-contact-last-chat-time
+{
+	color: black;
+}
+
 .chats-conversation-input-field,
 .chats-input {
 	padding-top: 10px;

@@ -46,7 +46,6 @@ public class MainPageController {
 	 */
 	@RequestMapping(value = { "/main" }, method = RequestMethod.GET)
 	public String prepare(ModelMap model) {
-		//model.addAttribute("loggedUser", CurrentUser.getCurrentUserName());
 		return "main";
 	}
 
@@ -55,8 +54,18 @@ public class MainPageController {
 	 */
 	@RequestMapping(value = { "/cabinet" }, method = RequestMethod.GET)
 	public String cabinet(ModelMap model) {
-		//model.addAttribute("loggedUser", CurrentUser.getCurrentUserName());
 		return "cabinet";
+	}
+	
+	/**
+	 * This method returns cabinet page.
+	 */
+	@RequestMapping(value = { "/head" }, method = RequestMethod.GET)
+	public String head(ModelMap model) {
+		
+		
+		model.addAttribute("userName", "fvevornborhbortbnrfd");
+		return "head";
 	}
 
 	/**

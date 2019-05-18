@@ -16,13 +16,14 @@
 	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
 	crossorigin="anonymous">
+	<c:url var="home" value="/" scope="request" />
 </head>
 
 <div id="chat">
     ${chatHistory}
 </div>
 <br />
-<sf:form id="chatMessageSubmitForm" >
+
     <br />
     <span id="flash"></span>
     <br />
@@ -33,8 +34,6 @@
         <input type="radio" id="messagesPerPageAll" name="messagesPerPage" value="0" />All
     </div>
     <br />
-    <input type="text" id="data" name="data" rows="3" cols="50"></input>
+    <textarea id="data"></textarea>
     <br />
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-    <input type="button" name="postMessage" id="postMessage" value="Post Message"/>
-</sf:form>
+    <button id="postMessage"/>Post Message</button>

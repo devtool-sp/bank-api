@@ -44,8 +44,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         			.permitAll()
                 .antMatchers("/registration")
                 .permitAll()
-                .antMatchers("/alldeals", "/head", "/main", "/createdeal", "/arbitration", "/cabinet", "/cashin", "/cashout", "/chats",
-                		"/customerservice", "/dealbuyer", "/dealbuyer-*", "/deals", "/dealseller", "/dealseller-*", "/edit-deal-*", "/delete-deal-*")
+                .antMatchers("/alldeals", "/head", "/main", "/createdeal", "/arbitration", "/cabinet", "/cashin", "/cashout", "/chats", "/userchat", "/userchat-*",
+                		"/customerservice", "/postMessageAJAX.json", "/setMessagesPerPagePropAJAX.json", "/loadChatHistoryAJAX.json", "/dealbuyer", "/dealbuyer-*", "/deals", "/dealseller", "/dealseller-*", "/edit-deal-*", "/delete-deal-*")
                 .access("hasRole('USER') or hasRole('ADMIN') or hasRole('DBA')")
                 .antMatchers("/admin/**").access("hasRole('ADMIN')")
                 .and().formLogin().loginPage("/login")

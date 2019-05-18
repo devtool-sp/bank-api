@@ -12,7 +12,7 @@ public class CurrentUser {
     public static String getCurrentUserName(){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication(); 
         Object obj = auth.getPrincipal();
-        String username = "";
+        String username = "bob";
  
         if (obj instanceof UserDetails) {
             username = ((UserDetails) obj).getUsername();

@@ -25,18 +25,24 @@
 		<div class="subtitle-money">
 			<div class="subtitle-money-name btn"></div>
 		</div>
-		<div class="subtitle-section">
+	<div class="subtitle-section">
 			<div class="subtitle-name pay-out">
 				<i class="far fa-minus-square fa-2x"></i>
-				<div class="subtitle-name-btn btn">Вывод</div>
+				<div class="subtitle-name-btn btn">
+					<a href="cashout">Вывод</a>
+				</div>
 			</div>
 			<div class="subtitle-name pay-in">
 				<i class="far fa-plus-square fa-2x"></i>
-				<div class="subtitle-name-btn btn">Ввод</div>
+				<div class="subtitle-name-btn btn">
+					<a href="cashin">Ввод</a>
+				</div>
 			</div>
 			<div class="subtitle-name">
 				<i class="fas fa-users-cog fa-2x"></i>
-				<div class="subtitle-name-btn btn">Кабинет</div>
+				<div class="subtitle-name-btn btn">
+					<a href="cabinet">Кабинет</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -45,16 +51,24 @@
 		<div class="main-subsection">
 			<div class="subsection-btns">
 				<div class="btn-chat" type="button">
-					<h2 class="deal-btn-title btn">Чаты</h2>
+					<h2 class="deal-btn-title btn">
+						<a href="userchat">Чаты</a>
+					</h2>
 				</div>
 				<div class="btn-deals" type="button">
-					<h2 class="deal-btn-title btn">Сделки</h2>
+					<h2 class="deal-btn-title btn">
+						<a href="deals">Сделки</a>
+					</h2>
 				</div>
 				<div class="btn-arbitration" type="button">
-					<h2 class="deal-btn-title btn">Арбитраж</h2>
+					<h2 class="deal-btn-title btn">
+						<a href="arbitration">Арбитраж</a>
+					</h2>
 				</div>
 				<div class="btn-service" type="button">
-					<h2 class="deal-btn-title btn">Служба поддержки</h2>
+					<h2 class="deal-btn-title btn">
+						<a href="customerservice">Служба поддержки</a>
+					</h2>
 				</div>
 			</div>
 			<div class="subsection-chats ">

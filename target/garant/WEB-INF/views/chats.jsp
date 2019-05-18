@@ -10,13 +10,17 @@
 <head>
 <title></title>
 <meta charset="UTF-8" />
+<meta name="_csrf" content="${_csrf.token}" />
+<meta name="_csrf_header" content="${_csrf.headerName}" />
 <link href="<c:url value='/static/css/style.css' />" rel="stylesheet"></link>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script language="JavaScript" type="text/javascript" src="<c:url value="/static/js/header.js" />"></script>
+<script language="JavaScript" type="text/javascript" src="<c:url value="/static/js/script.js" />"></script>
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
 	crossorigin="anonymous">
+	<c:url var="home" value="/" scope="request" />
 </head>
 
 <body>
@@ -89,28 +93,33 @@
 							</div>
 						</div>
 						<div class="chats-conversation">
+						<div id="chat">
+    ${chatHistory}
+</div>
 							<div class="chats-conversation-section">
-								<div class="chats-conversation-user-name">Имя</div>
+							<c:forEach items="${sellerMessages}" var="element">
+							<div class="chats-conversation-user-name" >${element.author.ssoId} </div>
 								<div class="chats-conversation-details">
-									<div class="chats-conversation-message">Понял</div>
-									<div class="chats-conversation-message-time">11:20:59 PM</div>
-								</div>
-							</div>
-							<div class="chats-conversation-section">
-								<div class="chats-conversation-user-name">Имя</div>
+									<div class="chats-conversation-message">${element.message} </div>
+									<div class="chats-conversation-message-time">${element.timestamp} </div>
+								</div>							
+							</c:forEach>
+							
+							<c:forEach items="${buyerMessages}" var="element">
+							<div class="chats-conversation-user-name">${element.author.ssoId} </div>
 								<div class="chats-conversation-details">
-									<div class="chats-conversation-message">Понял</div>
-									<div class="chats-conversation-message-time">11:20:59 PM</div>
-								</div>
-							</div>
+									<div class="chats-conversation-message">${element.message} </div>
+									<div class="chats-conversation-message-time">${element.timestamp} </div>
+								</div>							
+							</c:forEach>
+
 							<div class="chats-conversation-section-input">
+							 <span id="flash"></span>
 								<div class="chats-conversation-input-field">
-									<input class="chats-input" type="text"
-										placeholder="написать..." id="chat-input-field"
-										name="chat-input-field" />
+								 <textarea class="chats-input" placeholder="написать..."  id="data"></textarea>
 								</div>
 								<div class="chats-conversation-submit-btn">
-									<input type="submit" class="btn-chat-submit" value="отправить" />
+									<button id="postMessage"/>Отправить</button>
 								</div>
 							</div>
 						</div>

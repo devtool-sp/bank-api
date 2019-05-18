@@ -18,9 +18,7 @@ public class TransactionController {
      * This method returns cashin page.
      */
 	@RequestMapping(value = { "/cashin" }, method = RequestMethod.GET)
-	public String cashin(ModelMap model, HttpSession session, HttpServletRequest req) {
-		session = req.getSession();
-		session.getAttribute("loggedinuser");
+	public String cashin(ModelMap model) {
 		return "cashin";
 	}
 	
@@ -28,9 +26,7 @@ public class TransactionController {
      * This method returns cashout page.
      */
 	@RequestMapping(value = { "/cashout" }, method = RequestMethod.GET)
-	public String cashout(ModelMap model, HttpSession session, HttpServletRequest req) {
-		session = req.getSession();
-		session.getAttribute("loggedinuser");
+	public String cashout(ModelMap model) {
 		return "cashout";
 	}
 
