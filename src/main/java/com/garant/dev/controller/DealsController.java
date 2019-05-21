@@ -53,6 +53,7 @@ public class DealsController {
      */
 	@RequestMapping(value = { "/createdeal" }, method = RequestMethod.GET)
 	public String prepare(ModelMap model) {
+		model.addAttribute("userName", CurrentUser.getCurrentUserName());
 		Deal deal = new Deal();
 		model.addAttribute("deal", deal);
 		User user = getCurrentUser();
@@ -69,6 +70,7 @@ public class DealsController {
      */
 	@RequestMapping(value = { "/alldeals" }, method = RequestMethod.GET)
 	public String showalldeals(ModelMap model, @ModelAttribute("buyerdeals") List<Deal> buyerdeals, @ModelAttribute("sellerdeals") List<Deal> sellerdeals, HttpSession session, HttpServletRequest req) {
+		model.addAttribute("userName", CurrentUser.getCurrentUserName());
 		User user = getCurrentUser();
 		int id = user.getId();
 		buyerdeals = dealService.findAllDealsBuyer(id);
@@ -105,6 +107,7 @@ public class DealsController {
      */
 	@RequestMapping(value = { "/deals" }, method = RequestMethod.GET)
 	public String showalldeals(ModelMap model) {
+		model.addAttribute("userName", CurrentUser.getCurrentUserName());
 		return "deals";
 	}
 	
@@ -113,6 +116,7 @@ public class DealsController {
      */
 	@RequestMapping(value = { "/dealseller-{id}" }, method = RequestMethod.GET)
 	public String showSellerdeal(ModelMap model, @PathVariable String id) {
+		model.addAttribute("userName", CurrentUser.getCurrentUserName());
 		Deal deal = dealService.findById(Integer.valueOf(id));
 		model.addAttribute("sellerDeal", deal);
 		return "dealseller";
@@ -123,6 +127,7 @@ public class DealsController {
      */
 	@RequestMapping(value = { "/dealbuyer-{id}" }, method = RequestMethod.GET)
 	public String showByuerdeal(ModelMap model, @PathVariable String id) {
+		model.addAttribute("userName", CurrentUser.getCurrentUserName());
 		Deal deal = dealService.findById(Integer.valueOf(id));
 		model.addAttribute("buyerDeal", deal);
 		return "dealbuyer";
@@ -173,6 +178,7 @@ public class DealsController {
      */
     @RequestMapping(value = { "/edit-deal-{id}" }, method = RequestMethod.GET)
     public String editUser(@PathVariable String id, ModelMap model) {
+    	model.addAttribute("userName", CurrentUser.getCurrentUserName());
        Deal deal = dealService.findById(Integer.valueOf(id));
         model.addAttribute("deal", deal);
         model.addAttribute("edit", true);
@@ -199,7 +205,8 @@ public class DealsController {
      * This method will delete an user by it's SSOID value.
      */
     @RequestMapping(value = { "/delete-deal-{id}" }, method = RequestMethod.GET)
-    public String deleteUser(@PathVariable String id) {
+    public String deleteUser(@PathVariable String id, ModelMap model) {
+    	model.addAttribute("userName", CurrentUser.getCurrentUserName());
         dealService.deleteDealById(Integer.valueOf(id));
         return "redirect:/deals";
     }

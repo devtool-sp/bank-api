@@ -76,7 +76,7 @@
 						onClick='location.href="javascript:OpenComission()"'>Комиссия</div>
 					<div class="btn-main-user-exit" type="button">
 						<input type="hidden" class="btn-relative2" value="${userName}" />
-						<a href="<c:url value="/logout" />">Выход</a>
+						<a href="<c:url value="/logout" />" class="btn-main-user-exit">Выход</a>
 					</div>
 				</div>
 			</div>

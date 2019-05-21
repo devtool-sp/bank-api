@@ -45,7 +45,8 @@ public class MainPageController {
 	 * This method returns main page.
 	 */
 	@RequestMapping(value = { "/main" }, method = RequestMethod.GET)
-	public String prepare(ModelMap model) {
+	public String prepare(ModelMap model) {		
+		model.addAttribute("userName", CurrentUser.getCurrentUserName());
 		return "main";
 	}
 
@@ -54,6 +55,7 @@ public class MainPageController {
 	 */
 	@RequestMapping(value = { "/cabinet" }, method = RequestMethod.GET)
 	public String cabinet(ModelMap model) {
+		model.addAttribute("userName", CurrentUser.getCurrentUserName());
 		return "cabinet";
 	}
 	
@@ -61,10 +63,15 @@ public class MainPageController {
 	 * This method returns cabinet page.
 	 */
 	@RequestMapping(value = { "/head" }, method = RequestMethod.GET)
-	public String head(ModelMap model) {
-		
-		
-		model.addAttribute("userName", "fvevornborhbortbnrfd");
+	public String headGet(ModelMap model) {
+		return "head";
+	}
+	
+	/**
+	 * This method returns cabinet page.
+	 */
+	@RequestMapping(value = { "/head" }, method = RequestMethod.POST)
+	public String headPost(ModelMap model) {		
 		return "head";
 	}
 
@@ -74,7 +81,7 @@ public class MainPageController {
 	@RequestMapping(value = { "/main" }, method = RequestMethod.POST)
 	public String welcomeMessage(@ModelAttribute("user") User user, HttpSession session, SessionStatus status,
 			ModelMap model, @RequestParam(required = false) String logout) {
-
+		model.addAttribute("userName", "fvevornborhbortbnrfd");
 		if (logout != null) {
 			session.invalidate();
 			status.setComplete();

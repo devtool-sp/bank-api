@@ -30,6 +30,7 @@ import com.garant.dev.service.ChatMessageService;
 import com.garant.dev.service.UserService;
 import com.garant.dev.util.ForbiddenException;
 import com.garant.dev.util.ChatRoom;
+import com.garant.dev.util.CurrentUser;
 
 /**
  * Handles requests for chat messages.
@@ -61,8 +62,8 @@ public class ChatsController {
     private static final Logger log = LoggerFactory.getLogger(ChatsController.class);
 
     @RequestMapping(value = { "/chat" }, method = RequestMethod.GET)
-    public String index(Map<String, Object> model) {
-        log.info("messagesPerPage = " + messagesPerPage);
+    public String index(ModelMap modelMap, Map<String, Object> model) {
+    		modelMap.addAttribute("userName", CurrentUser.getCurrentUserName());
         StringBuilder chatHistory = messageService.fetchChatHistory(messagesPerPage);
         User user = getCurrentUser();
         model.put("page", "home");
@@ -77,6 +78,7 @@ public class ChatsController {
 	 */
 	@RequestMapping(value = { "/chats" }, method = RequestMethod.GET)
 	public String prepare(ModelMap model) {
+		model.addAttribute("userName", CurrentUser.getCurrentUserName());
 		User user = getCurrentUser();
 		if (user == null) {
 			throw new ForbiddenException();
@@ -122,6 +124,7 @@ public class ChatsController {
 	 */
 	@RequestMapping(value = { "/userchat" }, method = RequestMethod.GET)
 	public String userchat(ModelMap model) {
+		model.addAttribute("userName", CurrentUser.getCurrentUserName());
 		User user = getCurrentUser();
 		if (user == null) {
 			throw new ForbiddenException();
@@ -141,7 +144,7 @@ public class ChatsController {
 	 */
 	@RequestMapping(value = { "/arbitration" }, method = RequestMethod.GET)
 	public String arbitration(ModelMap model, HttpSession session, HttpServletRequest req) {
-
+		model.addAttribute("userName", CurrentUser.getCurrentUserName());
 		return "arbitration";
 	}
 
@@ -150,7 +153,7 @@ public class ChatsController {
 	 */
 	@RequestMapping(value = { "/customerservice" }, method = RequestMethod.GET)
 	public String customerservice(ModelMap model, HttpSession session, HttpServletRequest req) {
-
+		model.addAttribute("userName", CurrentUser.getCurrentUserName());
 		return "customerservice";
 	}
 
@@ -159,6 +162,7 @@ public class ChatsController {
 	 */
 	@RequestMapping(value = { "/addcontact" }, method = RequestMethod.GET)
 	public String newContact(ModelMap model) {
+		model.addAttribute("userName", CurrentUser.getCurrentUserName());
 		ChatMessage simpleMessage = new ChatMessage();
 		model.addAttribute("simpleMessage", simpleMessage);
 		return "addcontact";
@@ -297,7 +301,7 @@ public class ChatsController {
 	 */
 	@RequestMapping(value = { "/userchat-{id}" }, method = RequestMethod.GET)
 	public String editUser(@PathVariable String id, ModelMap model) {
-	
+		model.addAttribute("userName", CurrentUser.getCurrentUserName());
 		List<ChatMessage> allMessages = simpleMessageService.getAllMessages(id);
 		model.addAttribute("allMessages", allMessages);
 		return "userchat";

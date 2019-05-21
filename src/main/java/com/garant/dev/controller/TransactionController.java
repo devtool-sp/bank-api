@@ -8,6 +8,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.garant.dev.util.CurrentUser;
+
 /**
  * The controller class for transactions.
  */
@@ -19,6 +21,7 @@ public class TransactionController {
      */
 	@RequestMapping(value = { "/cashin" }, method = RequestMethod.GET)
 	public String cashin(ModelMap model) {
+		model.addAttribute("userName", CurrentUser.getCurrentUserName());
 		return "cashin";
 	}
 	
@@ -27,6 +30,7 @@ public class TransactionController {
      */
 	@RequestMapping(value = { "/cashout" }, method = RequestMethod.GET)
 	public String cashout(ModelMap model) {
+		model.addAttribute("userName", CurrentUser.getCurrentUserName());
 		return "cashout";
 	}
 
