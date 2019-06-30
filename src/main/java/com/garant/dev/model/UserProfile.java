@@ -13,7 +13,14 @@ import javax.persistence.Table;
 
 import com.garant.dev.model.UserProfile;
 import com.garant.dev.model.UserProfileType;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
  
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name="USER_PROFILE")
 public class UserProfile implements Serializable{
@@ -26,22 +33,7 @@ public class UserProfile implements Serializable{
      
    // @ManyToMany(mappedBy = "userProfiles")
    // private Set<User> users;
-    
-    public Integer getId() {
-        return id;
-    }
  
-    public void setId(Integer id) {
-        this.id = id;
-    }
- 
-    public String getType() {
-        return type;
-    }
- 
-    public void setType(String type) {
-        this.type = type;
-    }
 /*
 	public Set<User> getUsers() {
 		return users;

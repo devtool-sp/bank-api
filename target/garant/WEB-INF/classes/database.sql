@@ -46,7 +46,7 @@ create table USER_DEALS(
 create table MESSAGES(
    id BIGINT NOT NULL AUTO_INCREMENT,
    message TEXT(5000) NOT NULL,
-   timestamp DATE NOT NULL,
+   timestamp DATETIME NOT NULL,
    author_id BIGINT NOT NULL,
    deal_id BIGINT NOT NULL,
    arbitr_id BIGINT,
@@ -54,21 +54,43 @@ create table MESSAGES(
    PRIMARY KEY (id),
    FOREIGN KEY (author_id) REFERENCES APP_USER (id),
    FOREIGN KEY (customer_service_id) REFERENCES APP_USER (id),
-   FOREIGN KEY (arbitr_id) REFERENCES APP_USER (id),
-   FOREIGN KEY (deal_id) REFERENCES USER_DEALS (id)
+
 );
 
 /* SIMPLE_MESSAGES table contains all possible messages */ 
 create table SIMPLE_MESSAGES(
    id BIGINT NOT NULL AUTO_INCREMENT,
    message TEXT(5000) NOT NULL,
-   timestamp DATE NOT NULL,
+   timestamp DATETIME NOT NULL,
    sender_id BIGINT NOT NULL,
    reciever_id BIGINT NOT NULL,
    chat_id BIGINT NOT NULL,
    PRIMARY KEY (id),
    FOREIGN KEY (sender_id) REFERENCES APP_USER (id),
    FOREIGN KEY (reciever_id) REFERENCES APP_USER (id)
+);
+
+create table CHAT_APP(
+   id BIGINT NOT NULL AUTO_INCREMENT,
+   timestamp DATETIME NOT NULL,
+   sender_app_id BIGINT NOT NULL,
+   reciever_app_id BIGINT NOT NULL,
+   chat_app_id VARCHAR(30) NOT NULL,
+   PRIMARY KEY (id),
+   FOREIGN KEY (chat_app_id) REFERENCES SIMPLE_MESSAGES (chat_id),
+   FOREIGN KEY (sender_app_id) REFERENCES APP_USER (id),
+   FOREIGN KEY (reciever_app_id) REFERENCES APP_USER (id)
+);
+
+/* SIMPLE_MESSAGES table contains all possible messages */ 
+create table CREDIT_CARD(
+   id BIGINT NOT NULL AUTO_INCREMENT,
+   merchant_account VARCHAR(30) NOT NULL,
+   amount DOUBLE NOT NULL,
+   card VARCHAR(30) NOT NULL,
+   cardholder_id BIGINT NOT NULL,
+   PRIMARY KEY (id),
+   FOREIGN KEY (cardholder_id) REFERENCES APP_USER (id),
 );
 
 /* Populate USER_PROFILE Table */
@@ -89,4 +111,13 @@ VALUES ('admin','$2a$10$4eqIF5s/ewJwHK1p8lqlFOEm2QIA0S8g6./Lok.pQxqcxaBZYChRm');
 INSERT INTO APP_USER_USER_PROFILE (user_id, user_profile_id)
   SELECT user.id, profile.id FROM app_user user, user_profile profile
   where user.sso_id='admin' and profile.type='ADMIN';
+  
+  
+ALTER TABLE `garant1`.`SIMPLE_MESSAGES` 
+ADD INDEX `chat_id` (`chat_id` ASC);
+
+ALTER TABLE `garant1`.`CHAT_APP` 
+ADD UNIQUE INDEX `chat_app_id_UNIQUE` (`chat_app_id` ASC);
+
+
  

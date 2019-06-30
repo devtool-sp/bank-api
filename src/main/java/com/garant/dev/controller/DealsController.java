@@ -69,7 +69,7 @@ public class DealsController {
      * This method returns all deals section.
      */
 	@RequestMapping(value = { "/alldeals" }, method = RequestMethod.GET)
-	public String showalldeals(ModelMap model, @ModelAttribute("buyerdeals") List<Deal> buyerdeals, @ModelAttribute("sellerdeals") List<Deal> sellerdeals, HttpSession session, HttpServletRequest req) {
+	public String showalldeals(ModelMap model, @ModelAttribute("buyerdeals") List<Deal> buyerdeals, @ModelAttribute("sellerdeals") List<Deal> sellerdeals) {
 		model.addAttribute("userName", CurrentUser.getCurrentUserName());
 		User user = getCurrentUser();
 		int id = user.getId();

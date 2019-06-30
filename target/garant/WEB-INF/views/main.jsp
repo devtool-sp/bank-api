@@ -20,6 +20,7 @@
 </head>
 
 <body>
+
 	<%@ include file="/WEB-INF/views/head.jsp"%>
   <div class="header-section-subtitles">
         <div class="subtitle-money">

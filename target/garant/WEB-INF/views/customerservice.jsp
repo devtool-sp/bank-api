@@ -10,13 +10,17 @@
 <head>
 <title></title>
 <meta charset="UTF-8" />
+<meta name="_csrf" content="${_csrf.token}" />
+<meta name="_csrf_header" content="${_csrf.headerName}" />
 <link href="<c:url value='/static/css/style.css' />" rel="stylesheet"></link>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script language="JavaScript" type="text/javascript" src="<c:url value="/static/js/header.js" />"></script>
+<script language="JavaScript" type="text/javascript" src="<c:url value="/static/js/userchat.js" />"></script>
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
 	crossorigin="anonymous">
+	<c:url var="home" value="/" scope="request" />
 </head>
 
 <body>
@@ -53,7 +57,7 @@
 			<div class="subsection-btns">
 				<div class="btn-chat" type="button">
 					<h2 class="deal-btn-title btn">
-						<a href="chats">Чаты</a>
+						<a href="userchat">Чаты</a>
 					</h2>
 				</div>
 				<div class="btn-deals" type="button">
@@ -72,34 +76,31 @@
 					</h2>
 				</div>
 			</div>
+
 			<div class="b-popup-customer-service main-subsection">
 				<div class="b-popup-content-customer-service">
 					<div class="customer-service-conversation">
+						<div id="chat">${chatHistory}</div>
 						<div class="customer-service-conversation-section">
-							<div class="customer-service-conversation-user-name">Имя</div>
-							<div class="customer-service-conversation-details">
-								<div class="customer-service-conversation-message">Понял</div>
-								<div class="customer-service-conversation-message-time">11:20:59
-									PM</div>
-							</div>
+							<c:forEach items="${senderMessages}" var="element">
+								<div class="customer-service-conversation-user-name">${element.author.ssoId}</div>
+								<div class="customer-service-conversation-details">
+									<div class="customer-service-conversation-message">${element.message}</div>
+									<div class="customer-service-conversation-message-time">${element.timestamp}</div>
+								</div>
+							</c:forEach>
 						</div>
-						<div class="customer-service-conversation-section">
-							<div class="customer-service-conversation-user-name">Имя</div>
-							<div class="customer-service-conversation-details">
-								<div class="customer-service-conversation-message">Понял</div>
-								<div class="customer-service-conversation-message-time">11:20:59
-									PM</div>
-							</div>
-						</div>
+
 						<div class="customer-service-conversation-section-input">
 							<div class="customer-service-conversation-input-field">
-								<input class="customer-service-input" type="text"
+								<textarea class="customer-service-input" type="text"
 									placeholder="написать..." id="customer-service-input-field"
-									name="customer-service-input-field" />
+									name="customer-service-input-field"></textarea>
 							</div>
 							<div class="customer-service-conversation-submit-btn">
-								<input type="submit" class="btn-customer-service-submit"
-									value="отправить" />
+								<button id="postCustomerServiceMessage" />
+								Отправить
+								</button>
 							</div>
 						</div>
 					</div>

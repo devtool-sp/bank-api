@@ -130,5 +130,7 @@ public class MainPageController {
 		List<Deal> buyerdeals = dealService.findAllDealsBuyer(id);
 		return buyerdeals;
 	}
+	
+	
 
 }

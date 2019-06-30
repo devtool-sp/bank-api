@@ -789,6 +789,11 @@ MAIN SECTION
 	flex-direction: column;
 }
 
+.chats-conversation-user-name{
+	font-weight: bold;
+    color: #1a8e6f;
+}
+
 .chats-conversation-submit-btn {
 	height: 30px;
 	padding-top: 30px;
@@ -805,6 +810,7 @@ MAIN SECTION
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	border-bottom: 2px solid #1A8E7E;
 }
 
 .chats-conversation-section {
@@ -812,6 +818,7 @@ MAIN SECTION
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	max-width: 500px;
 }
 
 .chats-contact-add-btn {

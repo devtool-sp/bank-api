@@ -2,12 +2,8 @@
  * 
  */
 jQuery(document).ready(function($){
-    // auto-refresh task
-    setInterval('updateUserChatHistory()', 5000); // that's 30 seconds
-
     onuploadPage();
-    
-    // Post Message click handler
+    updateUserChatHistory();
     $('#postUserMessage').click(onClickPostUserMessage);
 
 });
@@ -30,11 +26,11 @@ function onuploadPage(){
 }
 
 function onClickPostUserMessage() {
-	var text = $('#data').val();
+	var text = $('#dataUserChat').val();
     if ($.trim(text)) {
         postChatMessage(text);
     } else {
-        $('#data').val('');
+        $('#dataUserChat').val('');
         $('span#flash').attr("class", "error");
         $('span#flash').html('The message is empty');
         $('span#flash').fadeIn(2000)
@@ -59,28 +55,30 @@ function updateUserChatHistory(){
 }
 
 function postChatMessage(text) {
-	var data = {"message" : $("#data").val()}
+	var dataUserChat = {"message" : $("#dataUserChat").val()}
     $.ajax({
         type : 'POST',
         contentType : "application/json; charset=utf-8",
         url : '/garant/postUserMessageAJAX.json',            
-        data : JSON.stringify(data),
+        data : JSON.stringify(dataUserChat),
         dataType: 'json', 
         success : function(response){
             if (response.status == 'SUCCESS') {
-                $('#data').val('');
-                $('span#flash').attr("class", "success");
-                $('span#flash').html('The message was posted successfully');
-                $('span#flash').fadeIn(2000);
-                $('span#flash').delay(5000).fadeOut(2000);
+                $('#dataUserChat').val('');
+                $('#flash').attr("class", "success");
+                $('#flash').html(dataUserChat);
+                
             }
+            updateUserChatHistory();
         },
         error : function(e) {
         }
     }).fail(function(jqXHR) {
-        $('span#flash').attr("class", "error");
-        $('span#flash').html('Failed to post the message: ' + jqXHR.statusText);
-        $('span#flash').fadeIn(2000);
-        $('span#flash').delay(5000).fadeOut(2000);
+        $('#flash').attr("class", "error");
+        $('#flash').html('Failed to post the message: ' + jqXHR.statusText);
+        $('#flash').fadeIn(2000);
+        $('#flash').delay(5000).fadeOut(2000);
     });
+	
+	
 }

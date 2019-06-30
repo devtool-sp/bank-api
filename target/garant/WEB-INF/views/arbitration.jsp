@@ -45,7 +45,7 @@
         <div class="main-subsection">
          <div class="subsection-btns">
                 <div class="btn-chat" type="button">
-                    <h2 class="deal-btn-title btn"><a href="chats">Чаты</a></h2>
+                    <h2 class="deal-btn-title btn"><a href="userchat">Чаты</a></h2>
                 </div>
                 <div class="btn-deals" type="button">
                     <h2 class="deal-btn-title btn"><a href="deals">Сделки</a></h2>

@@ -1,7 +1,7 @@
 package com.garant.dev.service;
 
-import com.garant.dev.dao.MessageDao;
-import com.garant.dev.model.DealMessage;
+import com.garant.dev.dao.UserDealMessageDao;
+import com.garant.dev.model.UserDealMessage;
 import org.joda.time.DateTime;
 import org.joda.time.DurationFieldType;
 import org.joda.time.Period;
@@ -26,33 +26,33 @@ public class MessageServiceImpl implements MessageService{
     private static final Logger log = LoggerFactory.getLogger(MessageServiceImpl.class);
 
     @Autowired
-    private MessageDao messageDao;
+    private UserDealMessageDao messageDao;
 
-    public DealMessage getMessage(Long messageId) {
+    public UserDealMessage getMessage(Long messageId) {
         return messageDao.getMessage(messageId);
     }
 
-    public List<DealMessage> getRecentMessages(int limit) {
-        List<DealMessage> list = messageDao.getRecentMessages(limit);
+    public List<UserDealMessage> getRecentMessages(int limit) {
+        List<UserDealMessage> list = messageDao.getRecentMessages(limit);
         Collections.reverse(list);
         return list;
     }
     
-    public List<DealMessage> getMessages(int dealId){
-        List<DealMessage> list = messageDao.getMessages(dealId);
+    public List<UserDealMessage> getMessages(int dealId){
+        List<UserDealMessage> list = messageDao.getMessages(dealId);
         Collections.reverse(list);
         return list;
     }
 
-    public void addMessage(DealMessage message) {
+    public void addMessage(UserDealMessage message) {
         messageDao.addMessage(message);
     }
 
     public StringBuilder fetchChatHistory(int limit) {
         StringBuilder chatHistory = new StringBuilder();
-        List<DealMessage> messages = getRecentMessages(limit);
+        List<UserDealMessage> messages = getRecentMessages(limit);
 
-        for (DealMessage m : messages ) {
+        for (UserDealMessage m : messages ) {
             String added = getTimeDiff(m.getTimestamp());
             chatHistory.append(
                     String.format("%s <b>%s</b>: %s<br />",

@@ -56,7 +56,7 @@
 			<div class="subsection-btns">
 				<div class="btn-chat" type="button">
 					<h2 class="deal-btn-title btn">
-						<a href="chats">Чаты</a>
+						<a href="userchat">Чаты</a>
 					</h2>
 				</div>
 				<div class="btn-deals" type="button">
@@ -80,24 +80,30 @@
 				<div class="b-popup-chats main-subsection">
 					<div class="b-popup-content-chats">
 						<div class="chats-contacts">
-							
+
 							<div class="chats-contact">
-							<c:forEach items="${listOfSimpleMessagesSender}" var="element">
-								<a href="<c:url value='/userchat-${element.chatId}' />"  class="chats-contact-name">${element.reciever.ssoId}</a>
-								<a href="<c:url value='/userchat-${element.chatId}' />"  class="chats-contact-status">0</a>
-								<a href="<c:url value='/userchat-${element.chatId}' />"  class="chats-contact-last-chat-time">${element.timestamp}</a>
-									</c:forEach>
+								<c:forEach items="${userChatMessageRoom}" var="element">
+									<a href="<c:url value='/userchat-${element.chatId}' />"
+										class="chats-contact-name">${element.userChatReciever.ssoId}</a>
+									<a href="<c:url value='/userchat-${element.chatId}' />"
+										class="chats-contact-status">0</a>
+									<a href="<c:url value='/userchat-${element.chatId}' />"
+										class="chats-contact-last-chat-time">${element.timestamp}</a>
+								</c:forEach>
 							</div>
 							<div class="chats-contact">
-								<c:forEach items="${listOfSimpleMessagesReciever}" var="element">
-								<a href="<c:url value='/userchat-${element.chatId}' />"  class="chats-contact-name">${element.sender.ssoId}</a>
-								<a href="<c:url value='/userchat-${element.chatId}' />"  class="chats-contact-status">0</a>
-								<a href="<c:url value='/userchat-${element.chatId}' />"  class="chats-contact-last-chat-time">${element.timestamp}</a>
-									</c:forEach>
+								<c:forEach items="${userChatMessageRoom}" var="element">
+									<a href="<c:url value='/userchat-${element.chatId}' />"
+										class="chats-contact-name">${element.userChatSender.ssoId}</a>
+									<a href="<c:url value='/userchat-${element.chatId}' />"
+										class="chats-contact-status">0</a>
+									<a href="<c:url value='/userchat-${element.chatId}' />"
+										class="chats-contact-last-chat-time">${element.timestamp}</a>
+								</c:forEach>
 							</div>
 						</div>
-					
-					<div class="chats-conversation">
+
+						<div class="chats-conversation">
 							<div id="chat">${chatHistory}</div>
 							<div class="chats-conversation-section">
 								<c:forEach items="${allMessages}" var="element">
@@ -112,10 +118,10 @@
 								</c:forEach>
 
 								<div class="chats-conversation-section-input">
-									<span id="flash"></span>
+									<div style="color:red;" id="flash"></div>
 									<div class="chats-conversation-input-field">
 										<textarea class="chats-input" placeholder="написать..."
-											id="data"></textarea>
+											id="dataUserChat"></textarea>
 									</div>
 									<div class="chats-conversation-submit-btn">
 										<button id="postUserMessage" />
@@ -125,10 +131,8 @@
 								</div>
 							</div>
 						</div>
-					
-					
-					
 					</div>
+				</div>
 			</div>
 		</div>
 	</div>

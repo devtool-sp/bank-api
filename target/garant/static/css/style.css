@@ -773,7 +773,7 @@ MAIN SECTION
 
 .chats-contact {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 	padding-bottom: 5px;
 }
@@ -786,7 +786,12 @@ MAIN SECTION
 
 .chats-conversation-section-input {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+}
+
+.chats-conversation-user-name{
+	font-weight: bold;
+    color: #1a8e6f;
 }
 
 .chats-conversation-submit-btn {
@@ -805,13 +810,15 @@ MAIN SECTION
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	border-bottom: 2px solid #1A8E7E;
 }
 
 .chats-conversation-section {
 	padding: 5px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
+	max-width: 500px;
 }
 
 .chats-contact-add-btn {
@@ -821,6 +828,11 @@ MAIN SECTION
 .chats-contact-name, .chats-contact-status, .chats-contact-last-chat-time
 {
 	color: black;
+}
+
+.user-icon-click{
+	color: #fff;
+	font-size: 16px;
 }
 
 .chats-conversation-input-field,

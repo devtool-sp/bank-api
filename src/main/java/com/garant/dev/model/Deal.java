@@ -3,30 +3,28 @@ package com.garant.dev.model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
-
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 import com.garant.dev.model.User;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name="USER_DEALS")
 public class Deal implements Serializable{
@@ -72,98 +70,11 @@ public class Deal implements Serializable{
 	 private User seller;
 	 
 	 @OneToMany(mappedBy = "chatDeal")
-	 private List<DealMessage> messageDeals;
+	 private List<UserDealMessage> messageDeals;
 
 	 @Transient
 	 private List<String> status;
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getSubject() {
-		return subject;
-	}
-
-	public void setSubject(String subject) {
-		this.subject = subject;
-	}
-
-	public String getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(String quantity) {
-		this.quantity = quantity;
-	}
-
-	public String getComplect() {
-		return complect;
-	}
-
-	public void setComplect(String complect) {
-		this.complect = complect;
-	}
-
-	public String getWeight() {
-		return weight;
-	}
-
-	public void setWeight(String weight) {
-		this.weight = weight;
-	}
-
-	public String getAdditionaly() {
-		return additionaly;
-	}
-
-	public void setAdditionaly(String additionaly) {
-		this.additionaly = additionaly;
-	}
-
-	public Integer getSum() {
-		return sum;
-	}
-
-	public void setSum(Integer sum) {
-		this.sum = sum;
-	}
-
-	public Date getTerms() {
-		return terms;
-	}
-
-	public void setTerms(Date terms) {
-		this.terms = terms;
-	}
-
-	public User getBuyer() {
-		return buyer;
-	}
-
-	public void setBuyer(User buyer) {
-		this.buyer = buyer;
-	}
-
-	public User getSeller() {
-		return seller;
-	}
-
-	public void setSeller(User seller) {
-		this.seller = seller;
-	}
-
-	public List<DealMessage> getMessageDeals() {
-		return messageDeals;
-	}
-
-	public void setMessageDeals(List<DealMessage> messageDeals) {
-		this.messageDeals = messageDeals;
-	}
 
 	@Override
 	public int hashCode() {

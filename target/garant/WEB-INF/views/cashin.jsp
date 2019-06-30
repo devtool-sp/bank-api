@@ -51,10 +51,20 @@
 		<div class="b-popup-pay-in main-subsection">
 			<div class="b-popup-content-pay-in">
 				<div class="pay-in-block">
+				<form action="cashin" method="post">
 					<div class="pay-in-section">
 						<div class="pay-in-subsection">
 							<div class="pay-in-card-title">Карты</div>
-							<div class="pay-in-card-number">5374********0464</div>
+							<input class="pay-in-card-number" type="text" name="card"
+							id="card" placeholder="Номер карты" />
+							<input class="pay-in-card-title" type="text" name="expMonth"
+							id="expMonth" placeholder="Месяц" />
+							<input class="pay-in-card-title" type="text" name="expYear"
+							id="expYear" placeholder="Год" />
+							<input class="pay-in-card-title" type="text" name="cardCvv"
+							input="cardCvv" placeholder="CVV" />
+							<input class="pay-in-card-title" type="text" name="cardHolder"
+							id="cardHolder" placeholder="Держатель карты" />
 						</div>
 						<div class="pay-in-card-title">
 							Сумма вывода
@@ -65,9 +75,11 @@
 						<div class="pay-in-comission-title">*комиссия 1,5% к выплате
 							- 2723,20</div>
 						<div class="pay-in-submit-btn">
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 							<input type="submit" class="pay-in-submit-btn" value="Вывести" />
 						</div>
 					</div>
+					</form>
 					<div class="pay-in-btns-section">
 						<div class="pay-in-card-title">Добавить карту</div>
 						<input class="pay-in-input-card" type="text" placeholder="*"
