@@ -24,7 +24,6 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
 @Entity
 @Table(name="USER_DEALS")
 public class Deal implements Serializable{
