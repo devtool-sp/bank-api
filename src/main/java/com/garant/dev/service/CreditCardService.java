@@ -1,9 +1,10 @@
 package com.garant.dev.service;
 
-import org.json.JSONObject;
+import com.garant.dev.model.wayforpay.InvoiceWFPAPIResponse;
+import com.mashape.unirest.http.exceptions.UnirestException;
 
 public interface CreditCardService {
 
-	public JSONObject getJSONFromApi(String infoData);
+	public InvoiceWFPAPIResponse getJSONFromApi(String infoData) throws UnirestException;
 	
 }

@@ -11,12 +11,12 @@ com/garant/dev/util/ChatRoom.class
 com/garant/dev/configuration/AppConfig.class
 com/garant/dev/dao/UserDealMessageDao.class
 com/garant/dev/service/UserServiceImpl.class
+com/garant/dev/service/UserService.class
 com/garant/dev/dao/UserDaoImpl.class
 com/garant/dev/controller/AdminController.class
-com/garant/dev/service/UserService.class
 com/garant/dev/configuration/AppInitializer.class
-com/garant/dev/controller/CustomerServiceController.class
 com/garant/dev/service/UserProfileServiceImpl.class
+com/garant/dev/controller/CustomerServiceController.class
 com/garant/dev/dao/DealDaoImpl.class
 com/garant/dev/service/UserChatMessageServiceImpl.class
 com/garant/dev/controller/RegistrationController.class
