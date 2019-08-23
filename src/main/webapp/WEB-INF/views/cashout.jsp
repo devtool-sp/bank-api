@@ -55,30 +55,29 @@
 						<div class="pay-in-section">
 
 							<div class="pay-in-subsection">
-								<div class="pay-in-card-title">Карты</div>
+								<div class="pay-in-card-title">Cards</div>
 								<div class="pay-in-card-number">5374********0464</div>
 							</div>
 
 							<div class="pay-in-card-title">
-								Сумма вывода
+								Enter sum
 								<div class="pay-in-sum-currency">UAH</div>
 							</div>
 							<input class="pay-in-input" type="text" placeholder="*"
 								id="pay-in-input-field" name="pay-in-input-field" />
-							<div class="pay-in-comission-title">*комиссия 1,5% к
-								выплате - 2723,20</div>
+							<div class="pay-in-comission-title">*comission 1,5%</div>
 							<div class="pay-in-submit-btn">
-								<input type="submit" class="pay-in-submit-btn" value="Вывести" />
+								<input type="submit" class="pay-in-submit-btn" value="Pay" />
 							</div>
 						</div>
-						<div class="pay-in-btns-section">
-							<div class="pay-in-card-title">Добавить карту</div>
-							<input class="pay-in-input-card" type="text" placeholder="*"
-								id="pay-in-input-field-card" name="pay-in-input-field" />
-							<div class="pay-in-submit-btn">
-								<input type="submit" class="pay-in-submit-btn" value="Добавить" />
-							</div>
+							<div class="pay-in-btns-section">
+						<div class="pay-in-card-title">Add card</div>
+						<input class="pay-in-input-card" type="text" placeholder="*"
+							id="pay-in-input-field-card" name="pay-in-input-field" />
+						<div class="pay-in-submit-btn">
+							<input type="submit" class="pay-in-submit-btn" value="Add card" />
 						</div>
+					</div>
 					</div>
 				</div>
 			</div>

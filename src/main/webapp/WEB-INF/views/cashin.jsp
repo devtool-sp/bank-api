@@ -54,38 +54,37 @@
 				<form action="cashin" method="post">
 					<div class="pay-in-section">
 						<div class="pay-in-subsection">
-							<div class="pay-in-card-title">Карты</div>
+							<div class="pay-in-card-title">Cards</div>
 							<input class="pay-in-card-number" type="text" name="card"
-							id="card" placeholder="Номер карты" />
+							id="card" placeholder="Card number" />
 							<input class="pay-in-card-title" type="text" name="expMonth"
-							id="expMonth" placeholder="Месяц" />
+							id="expMonth" placeholder="Month" />
 							<input class="pay-in-card-title" type="text" name="expYear"
-							id="expYear" placeholder="Год" />
+							id="expYear" placeholder="Year" />
 							<input class="pay-in-card-title" type="text" name="cardCvv"
 							input="cardCvv" placeholder="CVV" />
 							<input class="pay-in-card-title" type="text" name="cardHolder"
-							id="cardHolder" placeholder="Держатель карты" />
+							id="cardHolder" placeholder="Card holder" />
 						</div>
 						<div class="pay-in-card-title">
-							Сумма вывода
+							Enter sum
 							<div class="pay-in-sum-currency">UAH</div>
 						</div>
 						<input class="pay-in-input" type="text" placeholder="*"
 							id="pay-in-input-field" name="pay-in-input-field" />
-						<div class="pay-in-comission-title">*комиссия 1,5% к выплате
-							- 2723,20</div>
+						<div class="pay-in-comission-title">*comission 1,5%</div>
 						<div class="pay-in-submit-btn">
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-							<input type="submit" class="pay-in-submit-btn" value="Вывести" />
+							<input type="submit" class="pay-in-submit-btn" value="Pay" />
 						</div>
 					</div>
 					</form>
 					<div class="pay-in-btns-section">
-						<div class="pay-in-card-title">Добавить карту</div>
+						<div class="pay-in-card-title">Add card</div>
 						<input class="pay-in-input-card" type="text" placeholder="*"
 							id="pay-in-input-field-card" name="pay-in-input-field" />
 						<div class="pay-in-submit-btn">
-							<input type="submit" class="pay-in-submit-btn" value="Добавить" />
+							<input type="submit" class="pay-in-submit-btn" value="Add card" />
 						</div>
 					</div>
 				</div>
